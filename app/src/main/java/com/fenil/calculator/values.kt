@@ -10,6 +10,6 @@ data class values(
     val b13:Int=1,
     val b14:Int=2,
     val b15:Int=3,
-    val b16:Int=0
+    val b16:String="="
 
 )
