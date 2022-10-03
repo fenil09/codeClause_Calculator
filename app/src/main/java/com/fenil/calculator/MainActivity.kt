@@ -12,6 +12,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
     lateinit var button5:Button
@@ -33,7 +35,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     val data:values= values()
     lateinit var textview:TextView
     var evalutedata:String=""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -138,6 +139,16 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
                     textview.append(evalutedata)
                 }
 
+                R.id.b16 ->{
+                    val calculatedata:String=textview.text.toString()
+                 var result=ExpressionBuilder(calculatedata).build().evaluate().toString()
+                    textview.text=""
+                    textview.append(result)
+
+                }
+
+
+
 
                 R.id.b1 -> {
                     textview.text=""
@@ -154,9 +165,14 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
                 }
 
                 R.id.b4 -> {
-                    evalutedata="X"
+                    evalutedata="*"
                     textview.append(evalutedata)
+
+
+
                 }
+
+
 
 
             }
@@ -179,6 +195,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         percentagebutton.setOnClickListener(this)
         dividebutton.setOnClickListener(this)
         multiplybutton.setOnClickListener(this)
+        equalbutton.setOnClickListener(this)
 
     }
 
