@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/color.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/equalbuttonstyle.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/roundbutton.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17" />
+        <entry key="app/src/main/res/drawable/roundbutton2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
       </map>
     </option>
   </component>

@@ -2,20 +2,19 @@ package com.fenil.calculator
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.os.VibratorManager
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import net.objecthunter.exp4j.ExpressionBuilder
-import java.lang.Exception
 
-class MainActivity : AppCompatActivity(),View.OnClickListener {
+class MainActivity : AppCompatActivity(),View.OnTouchListener {
     lateinit var button5:Button
     lateinit var button6:Button
     lateinit var button7:Button
@@ -27,9 +26,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     lateinit var button15:Button
     lateinit var equalbutton:Button
     lateinit var addbutton:Button
-    lateinit var clearbutton:Button
+    lateinit var button1:Button
     lateinit var minusbutton:Button
-    lateinit var percentagebutton:Button
+    lateinit var clearbutton:Button
     lateinit var dividebutton:Button
     lateinit var multiplybutton:Button
     val data:values= values()
@@ -41,9 +40,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         givetext()
 
         addbutton=findViewById(R.id.b8)
-        clearbutton=findViewById(R.id.b1)
+        button1=findViewById(R.id.b1)
         minusbutton=findViewById(R.id.b12)
-        percentagebutton=findViewById(R.id.b2)
+        clearbutton=findViewById(R.id.b2)
         dividebutton=findViewById(R.id.b3)
         multiplybutton=findViewById(R.id.b4)
         setonclick()
@@ -81,122 +80,335 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     }
 
-    override fun onClick(v: View?) {
 
+    @SuppressLint("ClickableViewAccessibility")
+    fun setonclick(){
+        button5.setOnTouchListener(this)
+        button6.setOnTouchListener(this)
+        button7.setOnTouchListener(this)
+        addbutton.setOnTouchListener(this)
+        button9.setOnTouchListener(this)
+        button10.setOnTouchListener(this)
+        button11.setOnTouchListener(this)
+        minusbutton.setOnTouchListener(this)
+        button13.setOnTouchListener(this)
+        button14.setOnTouchListener(this)
+        button15.setOnTouchListener(this)
+        button1.setOnTouchListener(this)
+        clearbutton.setOnTouchListener(this)
+        dividebutton.setOnTouchListener(this)
+        multiplybutton.setOnTouchListener(this)
+        equalbutton.setOnTouchListener(this)
+
+
+    }
+
+
+    fun check(){
+       val data=textview.text.toString()
+        if(data.isNotEmpty()){
+            val result=ExpressionBuilder(data).build().evaluate().toString()
+            textview.setText("")
+            textview.append(result)
+        }
+        else{
+            Toast.makeText(this,"Please enter valid data to perform operations",Toast.LENGTH_LONG).show()
+        }
+
+    }
+
+
+    fun vibrateonclick(){
+        val vibrator=this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        vibrator.vibrate(VibrationEffect.createOneShot(150,VibrationEffect.DEFAULT_AMPLITUDE))
+    }
+
+    @SuppressLint("ClickableViewAccessibility", "ResourceAsColor", "PrivateResource")
+    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
         if (v != null) {
             when(v.id){
-                R.id.b5 -> {
-                    evalutedata="7"
-                    textview.append(evalutedata)
+                R.id.b5 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_UP ->{
+                               button5.setBackgroundResource(R.drawable.roundbutton)
+                                button5.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="7"
+                                textview.append(evalutedata)
+                                button5.setBackgroundResource(R.drawable.roundbutton2)
+                                button5.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }                        }
+                    }
                 }
+
                 R.id.b6 -> {
-                    evalutedata="8"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="8"
+                                textview.append(evalutedata)
+                                button6.setBackgroundResource(R.drawable.roundbutton2)
+                                button6.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button6.setBackgroundResource(R.drawable.roundbutton)
+                                button6.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
 
-                R.id.b7 -> {
-                    evalutedata="9"
-                    textview.append(evalutedata)
+                R.id.b7 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="9"
+                                textview.append(evalutedata)
+                                button7.setBackgroundResource(R.drawable.roundbutton2)
+                                button7.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button7.setBackgroundResource(R.drawable.roundbutton)
+                                button7.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
+
                 }
 
-                R.id.b8 -> {
-                    evalutedata="+"
-                    textview.append(evalutedata)
+                R.id.b8 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="+"
+                                textview.append(evalutedata)
+                                addbutton.setBackgroundResource(R.drawable.roundbutton2)
+                                addbutton.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                addbutton.setBackgroundResource(R.drawable.roundbutton)
+                                addbutton.setTextColor(Color.parseColor("#3DE306"))
+                            }
+                        }
+                    }
                 }
 
-                R.id.b9 -> {
-                    evalutedata="4"
-                    textview.append(evalutedata)
+                R.id.b9 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="4"
+                                textview.append(evalutedata)
+                                button9.setBackgroundResource(R.drawable.roundbutton2)
+                                button9.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button9.setBackgroundResource(R.drawable.roundbutton)
+                                button9.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
-
                 R.id.b10 ->{
-                    evalutedata="5"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="5"
+                                textview.append(evalutedata)
+                                button10.setBackgroundResource(R.drawable.roundbutton2)
+                                button10.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button10.setBackgroundResource(R.drawable.roundbutton)
+                                button10.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
-
-                R.id.b11 -> {
-                    evalutedata="6"
-                    textview.append(evalutedata)
+                R.id.b11 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="6"
+                                textview.append(evalutedata)
+                                button11.setBackgroundResource(R.drawable.roundbutton2)
+                                button11.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button11.setBackgroundResource(R.drawable.roundbutton)
+                                button11.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
-
                 R.id.b12 ->{
-                    evalutedata="-"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="-"
+                                textview.append(evalutedata)
+                                minusbutton.setBackgroundResource(R.drawable.roundbutton2)
+                                minusbutton.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                minusbutton.setBackgroundResource(R.drawable.roundbutton)
+                                minusbutton.setTextColor(Color.parseColor("#3DE306"))
+                            }
+                        }
+                    }
                 }
 
                 R.id.b13 ->{
-                    evalutedata="1"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="1"
+                                textview.append(evalutedata)
+                                button13.setBackgroundResource(R.drawable.roundbutton2)
+                                button13.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button13.setBackgroundResource(R.drawable.roundbutton)
+                                button13.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
-
                 R.id.b14 -> {
-                    evalutedata="2"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="2"
+                                textview.append(evalutedata)
+                                button14.setBackgroundResource(R.drawable.roundbutton2)
+                                button14.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button14.setBackgroundResource(R.drawable.roundbutton)
+                                button14.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
-
                 R.id.b15 ->{
-                    evalutedata="3"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="3"
+                                textview.append(evalutedata)
+                                button15.setBackgroundResource(R.drawable.roundbutton2)
+                                button15.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button15.setBackgroundResource(R.drawable.roundbutton)
+                                button15.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
 
                 R.id.b16 ->{
-                    val calculatedata:String=textview.text.toString()
-                 var result=ExpressionBuilder(calculatedata).build().evaluate().toString()
-                    textview.text=""
-                    textview.append(result)
-
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                              check()
+                                equalbutton.setBackgroundResource(R.drawable.roundbutton2)
+                                equalbutton.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                equalbutton.setBackgroundResource(R.drawable.equalbuttonstyle)
+                                equalbutton.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
 
-
-
-
-                R.id.b1 -> {
-                    textview.text=""
+                R.id.b1 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="0"
+                                textview.append(evalutedata)
+                                button1.setBackgroundResource(R.drawable.roundbutton2)
+                                button1.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                button1.setBackgroundResource(R.drawable.roundbutton)
+                                button1.setTextColor(Color.parseColor("#ffffff"))
+                            }
+                        }
+                    }
                 }
 
                 R.id.b2 ->{
-                    evalutedata="%"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                textview.text=""
+                                clearbutton.setBackgroundResource(R.drawable.roundbutton2)
+                                clearbutton.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                clearbutton.setBackgroundResource(R.drawable.roundbutton)
+                                clearbutton.setTextColor(Color.parseColor("#ff0000"))
+                            }
+                        }
+                    }
                 }
 
                 R.id.b3 ->{
-                    evalutedata="/"
-                    textview.append(evalutedata)
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="/"
+                                textview.append(evalutedata)
+                                dividebutton.setBackgroundResource(R.drawable.roundbutton2)
+                                dividebutton.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                dividebutton.setBackgroundResource(R.drawable.roundbutton)
+                                dividebutton.setTextColor(Color.parseColor("#3DE306"))
+                            }
+                        }
+                    }
                 }
-
-                R.id.b4 -> {
-                    evalutedata="*"
-                    textview.append(evalutedata)
-
-
-
+                R.id.b4 ->{
+                    if (event != null) {
+                        when(event.action){
+                            MotionEvent.ACTION_DOWN ->{
+                                evalutedata="*"
+                                textview.append(evalutedata)
+                                multiplybutton.setBackgroundResource(R.drawable.roundbutton2)
+                                multiplybutton.setTextColor(R.color.black)
+                                vibrateonclick()
+                            }
+                            MotionEvent.ACTION_UP ->{
+                                multiplybutton.setBackgroundResource(R.drawable.roundbutton)
+                                multiplybutton.setTextColor(Color.parseColor("#3DE306"))
+                            }
+                        }
+                    }
                 }
-
-
-
-
             }
         }
-    }
-
-    fun setonclick(){
-        button5.setOnClickListener(this)
-        button6.setOnClickListener(this)
-        button7.setOnClickListener(this)
-        addbutton.setOnClickListener(this)
-        button9.setOnClickListener(this)
-        button10.setOnClickListener(this)
-        button11.setOnClickListener(this)
-        minusbutton.setOnClickListener(this)
-        button13.setOnClickListener(this)
-        button14.setOnClickListener(this)
-        button15.setOnClickListener(this)
-        clearbutton.setOnClickListener(this)
-        percentagebutton.setOnClickListener(this)
-        dividebutton.setOnClickListener(this)
-        multiplybutton.setOnClickListener(this)
-        equalbutton.setOnClickListener(this)
-
+      return true
     }
 
 

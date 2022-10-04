@@ -16,7 +16,7 @@
             app:layout_constraintTop_toBottomOf="@+id/b1" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.349"
-            app:layout_constraintVertical_bias="0.485"/>
+            app:layout_constraintVertical_bias="0.484"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -26,9 +26,9 @@
             app:layout_constraintTop_toBottomOf="@+id/b1" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.644"
-            app:layout_constraintVertical_bias="0.485"/>
+            app:layout_constraintVertical_bias="0.484"/>
     <androidx.appcompat.widget.AppCompatButton
-            android:textColor="@color/white"
+            android:textColor="#3DE306"
             android:textSize="25sp"
             android:text="-"
             android:layout_width="81dp"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/b1" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.945"
-            app:layout_constraintVertical_bias="0.485"/>
+            app:layout_constraintVertical_bias="0.484"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/b1" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintVertical_bias="0.485"/>
+            app:layout_constraintVertical_bias="0.484"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -57,7 +57,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.891"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.899"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -67,17 +67,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.349"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.891"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.899"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
             android:layout_width="81dp"
-            android:background="@drawable/roundbutton"
+            android:background="@drawable/equalbuttonstyle"
             android:layout_height="76dp" android:id="@+id/b16"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.945"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.891"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.899"
+            />
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -87,7 +88,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.644"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.891"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.899"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guideline2"
                                                 android:outlineSpotShadowColor="@color/white"
@@ -99,57 +100,57 @@
             android:textSize="25sp"
             android:background="@drawable/roundbutton"
             android:layout_width="81dp"
-            android:text="C"
+            android:text="0"
             android:textColor="@color/white"
             android:layout_height="76dp" android:id="@+id/b1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.091"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.151"
             app:layout_constraintEnd_toStartOf="@+id/b2" android:layout_marginEnd="12dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"
+    />
     <androidx.appcompat.widget.AppCompatButton
             android:textSize="25sp"
             android:background="@drawable/roundbutton"
             android:layout_width="81dp"
-            android:text="%"
-            android:textColor="@color/white"
+            android:text="C"
+            android:textColor="#E80505"
             android:layout_height="76dp" android:id="@+id/b2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.349"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.091"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.149"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textSize="25sp"
             android:background="@drawable/roundbutton"
             android:layout_width="81dp"
             android:text="/"
-            android:textColor="@color/white"
+            android:textColor="#3DE306"
             android:layout_height="76dp" android:id="@+id/b3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.644"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.091"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.149"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textSize="25sp"
             android:background="@drawable/roundbutton"
             android:layout_width="81dp"
             android:text="X"
-            android:textColor="@color/white"
+            android:textColor="#3DE306"
             android:layout_height="76dp" android:id="@+id/b4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.948"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.091"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.149"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
             android:layout_width="81dp"
             android:background="@drawable/roundbutton"
             android:layout_height="76dp" android:id="@+id/b5"
-           android:onClick="buttonclicked"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.343"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.39"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -159,7 +160,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.349"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.343"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.39"/>
     <androidx.appcompat.widget.AppCompatButton
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -169,9 +170,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.644"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.343"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.39"/>
     <androidx.appcompat.widget.AppCompatButton
-            android:textColor="@color/white"
+            android:textColor="#3DE306"
             android:textSize="25sp"
             android:text="+"
             android:layout_width="81dp"
@@ -180,7 +181,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.945"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.343"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintVertical_bias="0.39"/>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:background="@color/white"
@@ -191,15 +192,16 @@
             app:layout_constraintVertical_bias="0.0">
 
         <TextView
-                android:layout_width="382dp"
+                android:layout_width="329dp"
                 android:textSize="50dp"
                 android:textColor="@color/black"
                 android:textStyle="bold|italic"
                 android:textAlignment="textEnd"
-                android:paddingTop="170dp"
-                android:layout_height="254dp" android:id="@+id/textView"
+                android:paddingRight="25dp"
+                android:paddingTop="150dp"
+                android:layout_height="209dp" android:id="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent" tools:ignore="RtlSymmetry"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
