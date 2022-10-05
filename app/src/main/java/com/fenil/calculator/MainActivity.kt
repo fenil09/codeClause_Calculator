@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
     val data:values= values()
     lateinit var textview:TextView
     var evalutedata:String=""
+    var checkcounter=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -107,9 +108,22 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
     fun check(){
        val data=textview.text.toString()
         if(data.isNotEmpty()){
+            var convertresult:String=""
             val result=ExpressionBuilder(data).build().evaluate().toString()
+            var ch:CharArray=result.toCharArray()
+            var index=ch.size-1
+            var ch1:Char=ch[index]
+            if(ch1=='0'){
+                ch[index]=' '
+                ch[index-1]=' '
+                convertresult= String(ch)
+            }
+            else{
+                convertresult=result
+            }
+
             textview.setText("")
-            textview.append(result)
+            textview.append(convertresult)
         }
         else{
             Toast.makeText(this,"Please enter valid data to perform operations",Toast.LENGTH_LONG).show()
@@ -131,6 +145,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                     if (event != null) {
                         when(event.action){
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                button5.setBackgroundResource(R.drawable.roundbutton)
                                 button5.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -155,6 +170,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button6.setBackgroundResource(R.drawable.roundbutton)
                                 button6.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -173,6 +189,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button7.setBackgroundResource(R.drawable.roundbutton)
                                 button7.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -185,8 +202,14 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                     if (event != null) {
                         when(event.action){
                             MotionEvent.ACTION_DOWN ->{
-                                evalutedata="+"
-                                textview.append(evalutedata)
+                                checkcounter++
+                                if(checkcounter==1){
+                                    evalutedata="+"
+                                    textview.append(evalutedata)
+                                }
+                                else{
+                                    Toast.makeText(this,"sorry invalid operation trying to be executed",Toast.LENGTH_LONG).show()
+                                }
                                 addbutton.setBackgroundResource(R.drawable.roundbutton2)
                                 addbutton.setTextColor(R.color.black)
                                 vibrateonclick()
@@ -210,6 +233,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button9.setBackgroundResource(R.drawable.roundbutton)
                                 button9.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -227,6 +251,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button10.setBackgroundResource(R.drawable.roundbutton)
                                 button10.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -244,6 +269,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button11.setBackgroundResource(R.drawable.roundbutton)
                                 button11.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -254,8 +280,14 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                     if (event != null) {
                         when(event.action){
                             MotionEvent.ACTION_DOWN ->{
-                                evalutedata="-"
-                                textview.append(evalutedata)
+                                checkcounter++
+                                if(checkcounter==1){
+                                    evalutedata="-"
+                                    textview.append(evalutedata)
+                                }
+                                else{
+                                    Toast.makeText(this,"sorry invalid operation trying to be executed",Toast.LENGTH_LONG).show()
+                                }
                                 minusbutton.setBackgroundResource(R.drawable.roundbutton2)
                                 minusbutton.setTextColor(R.color.black)
                                 vibrateonclick()
@@ -279,6 +311,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button13.setBackgroundResource(R.drawable.roundbutton)
                                 button13.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -296,6 +329,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button14.setBackgroundResource(R.drawable.roundbutton)
                                 button14.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -313,6 +347,7 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                                 vibrateonclick()
                             }
                             MotionEvent.ACTION_UP ->{
+                                checkcounter=0
                                 button15.setBackgroundResource(R.drawable.roundbutton)
                                 button15.setTextColor(Color.parseColor("#ffffff"))
                             }
@@ -376,8 +411,14 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                     if (event != null) {
                         when(event.action){
                             MotionEvent.ACTION_DOWN ->{
-                                evalutedata="/"
-                                textview.append(evalutedata)
+                                checkcounter++
+                                if(checkcounter==1){
+                                    evalutedata="/"
+                                    textview.append(evalutedata)
+                                }
+                                else{
+                                    Toast.makeText(this,"Sorry invalid operation trying to be executed",Toast.LENGTH_LONG).show()
+                                }
                                 dividebutton.setBackgroundResource(R.drawable.roundbutton2)
                                 dividebutton.setTextColor(R.color.black)
                                 vibrateonclick()
@@ -393,8 +434,14 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
                     if (event != null) {
                         when(event.action){
                             MotionEvent.ACTION_DOWN ->{
-                                evalutedata="*"
-                                textview.append(evalutedata)
+                                checkcounter++
+                                if(checkcounter==1){
+                                    evalutedata="*"
+                                    textview.append(evalutedata)
+                                }
+                                else{
+                                    Toast.makeText(this,"Sorry invalid operation trying to be executed",Toast.LENGTH_LONG).show()
+                                }
                                 multiplybutton.setBackgroundResource(R.drawable.roundbutton2)
                                 multiplybutton.setTextColor(R.color.black)
                                 vibrateonclick()
@@ -410,6 +457,11 @@ class MainActivity : AppCompatActivity(),View.OnTouchListener {
         }
       return true
     }
+
+
+
+
+
 
 
 }

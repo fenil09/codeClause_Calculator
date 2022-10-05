@@ -192,14 +192,14 @@
             app:layout_constraintVertical_bias="0.0">
 
         <TextView
-                android:layout_width="329dp"
+                android:layout_width="356dp"
                 android:textSize="50dp"
                 android:textColor="@color/black"
                 android:textStyle="bold|italic"
                 android:textAlignment="textEnd"
                 android:paddingRight="25dp"
                 android:paddingTop="150dp"
-                android:layout_height="209dp" android:id="@+id/textView"
+                android:layout_height="232dp" android:id="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" tools:ignore="RtlSymmetry"/>
